@@ -15,10 +15,10 @@
         <p id="getOTP"></p>
         <h5>Please Enter OTP  which will get by above get OTP Button</h5>
         <div class="d-flex justify-content-around w-50 mx-auto">
-        <input type="text" maxlength="1" minlength="1" size="1" class="" style="border-radius:7px;" id="input1"/>
-        <input type="text" maxlength="1" minlength="1" size="1" class="" style="border-radius:7px;" id="input2"/>
-        <input type="text" maxlength="1" minlength="1" size="1" class="" style="border-radius:7px;" id="input3"/>
-        <input type="text" maxlength="1" minlength="1" size="1" class="" style="border-radius:7px;" id="input4"/>
+        <input type="text" maxlength="1" minlength="1" size="1" class="" style="border-radius:7px;" id="input1" onchange="goToNext(1)"/>
+        <input type="text" maxlength="1" minlength="1" size="1" class="" style="border-radius:7px;" id="input2" onchange="goToNext(2)"/>
+        <input type="text" maxlength="1" minlength="1" size="1" class="" style="border-radius:7px;" id="input3" onchange="goToNext(3)"/>
+        <input type="text" maxlength="1" minlength="1" size="1" class="" style="border-radius:7px;" id="input4" onchange="goToNext(4)"/>
     </div>
 
       <br> <button class="btn btn-primary" onclick="checkOTP()">Submit</button>
@@ -35,7 +35,22 @@
             genOTP=Math.floor(Math.random()*(9999 - 1000+1))+1000;
             document.getElementById('getOTP').innerHTML=genOTP;
         }
+        function goToNextInput(n1){
+            for(i=1;i<=4;i++){
+                let goToNextInput=document.getElementById(`input${i}`)
+                if(goToNextInput.value.length== 1 && n1 <=4){
+                    focument.getElementById(`inp`)
+                }
+            }
+        }
         function checkOTP(){
+            let otp="";
+            let goToNextInput=document.getElementById(`input${i}`)
+            for(i=1;i<=4;i++){
+                otp +=goToNextInput.value;
+                console.log(otp)
+                
+            }
 
         }
     </script>
